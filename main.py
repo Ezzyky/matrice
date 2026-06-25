@@ -54,20 +54,21 @@ while True:
                         matrice[index][i]=temp
                     print(f"L1 ​↔ L​{index+1}")
                     affichage(matrice)
-            for pivot in range(0,min(len(matrice), len(matrice[0]))):
-                if matrice[pivot][pivot] == 0:
-                    index = -1
-                    for i in range(pivot + 1, lignes):
-                        if matrice[i][pivot] != 0:
-                            index = i
-                            break
-                    if index != -1:
-                        matrice[pivot], matrice[index] = matrice[index], matrice[pivot]
-                        print(f"L{pivot+1} ↔ L{index+1}")
-
-                elimination_gauss(matrice, pivot)
-                affichage(matrice)
-                print()
+                for pivot in range(0,min(len(matrice), len(matrice[0]))):
+                    if matrice[pivot][pivot] == 0:
+                        index = -1
+                        for i in range(pivot + 1, lignes):
+                            if matrice[i][pivot] != 0:
+                                index = i
+                                break
+                        if index != -1:
+                            matrice[pivot], matrice[index] = matrice[index], matrice[pivot]
+                            print(f"L{pivot+1} ↔ L{index+1}")
+                    elimination_gauss(matrice, pivot)
+                    affichage(matrice)
+                    print()
+            else:
+                pass
             #affichge de resulta fianle
             print("resulta finale:")
             affichage(matrice)
