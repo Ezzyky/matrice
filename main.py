@@ -42,7 +42,13 @@ while True:
         #affichage de menu et input d option et clear
         os.system("cls")
         menu()
-        option=int(input("Choisissez une option : "))
+        try:
+            option = int(input("Choisissez une option : "))
+        except ValueError:
+            print("Option invalide.")
+            msvcrt.getch()
+            os.system("cls")
+            continue
         os.system("cls") 
 
 
@@ -110,7 +116,6 @@ while True:
                               Addition de matrices
             =========================================================
     """)
-            flag=0
             try:
                 matrice_pour_add=prenant_matrice(nom="B")
             except ValueError:
@@ -119,33 +124,33 @@ while True:
                     print("Appuyez sur n'importe quel bouton pour sortir...")
                     msvcrt.getch()
                     os.system("cls")
-                    flag=1
                     continue
+            
             os.system("cls")
             lignes_B=len(matrice_pour_add)
             colonnes_B=len(matrice_pour_add[0])
-            if len(matrice)!=lignes_B or len(matrice[0])==colonnes_B:
+            if len(matrice)!=lignes_B or len(matrice[0])!=colonnes_B:
                 print("Addition impossible : dimensions incompatibles.")
                 print("Appuyez sur n'importe quel bouton pour sortir...")
                 msvcrt.getch()
                 os.system("cls")
                 continue
-            if flag!=1:
+            
                 
-                print("Matrice initiale :")
-                affichage(matrice)
-                print()
-                print("Matrice à ajouter :")    
-                affichage(matrice_pour_add)
-                print()
-                print("la methode:")
-                adition_matrice=addition(matrice,matrice_pour_add)
-                print()
-                print("Résultat de l'addition :")
-                affichage(adition_matrice)
-                print("Appuyez sur n'importe quel bouton pour sortir...")
-                msvcrt.getch()
-                os.system("cls")
+            print("Matrice initiale :")
+            affichage(matrice)
+            print()
+            print("Matrice à ajouter :")    
+            affichage(matrice_pour_add)
+            print()
+            print("la methode:")
+            adition_matrice=addition(matrice,matrice_pour_add)
+            print()
+            print("Résultat de l'addition :")
+            affichage(adition_matrice)
+            print("Appuyez sur n'importe quel bouton pour sortir...")
+            msvcrt.getch()
+            os.system("cls")
 
 
         elif option==0:
