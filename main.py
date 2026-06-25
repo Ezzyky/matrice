@@ -95,8 +95,10 @@ while True:
                 else:
                     print()
                     print("La matrice contient une seule ligne. Aucune élimination n'est nécessaire.")
-                    option=int(input("Choisissez une option : "))
+                    print("Appuyez sur n'importe quel bouton pour sortir...")
+                    msvcrt.getch()
                     os.system("cls")
+                    continue
                 #affichge de resulta fianle
                 print("resulta finale:")
                 affichage(matrice)
@@ -114,8 +116,7 @@ while True:
             print("""
             =========================================================
                               Addition de matrices
-            =========================================================
-    """)
+            =========================================================""")
             try:
                 matrice_pour_add=prenant_matrice(nom="B")
             except ValueError:
@@ -151,6 +152,49 @@ while True:
             print("Appuyez sur n'importe quel bouton pour sortir...")
             msvcrt.getch()
             os.system("cls")
+
+        elif option==6:
+            print("""
+            =========================================================
+                              Soustraction de matrices
+            =========================================================
+    """)
+            try:
+                matrice_pour_sost=prenant_matrice(nom="B")
+            except ValueError:
+                    print("Veuillez entrer un nombre valide !(un nombre entier).")
+                    print()
+                    print("Appuyez sur n'importe quel bouton pour sortir...")
+                    msvcrt.getch()
+                    os.system("cls")
+                    continue
+            
+            os.system("cls")
+            lignes_B=len(matrice_pour_sost)
+            colonnes_B=len(matrice_pour_add[0])
+            if len(matrice)!=lignes_B or len(matrice[0])!=colonnes_B:
+                print("Soustraction impossible : dimensions incompatibles.")
+                print("Appuyez sur n'importe quel bouton pour sortir...")
+                msvcrt.getch()
+                os.system("cls")
+                continue
+            
+            print("Matrice initiale :")
+            affichage(matrice)
+            print()
+            print("Matrice à ajouter :")    
+            affichage(matrice_pour_sost)
+            print()
+            print("la methode:")
+            soustraction_matrice=addition(matrice,matrice_pour_sost)
+            print()
+            print("Résultat de l'addition :")
+            print()
+            affichage(soustraction_matrice)
+            print("Appuyez sur n'importe quel bouton pour sortir...")
+            msvcrt.getch()
+            os.system("cls")
+
         #Quitter
         elif option==0:
             print("GOOD BYE!")
