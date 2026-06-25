@@ -41,4 +41,24 @@ def elimination_gauss(matrice, pivot):
                 matrice[j][i] = matrice[j][i] * p - matrice[pivot][i] * a
 
 def menu():
-    pass
+
+    print("""
+=========================================================
+      APPLICATION D'ALGÈBRE LINÉAIRE
+=========================================================
+
+1 - Réduction de Gauss
+2 - Méthode de Gauss-Jordan
+3 - Calcul du déterminant
+4 - Inverse d'une matrice
+5 - Addition de matrices
+6 - Soustraction de matrices
+7 - Multiplication de matrices
+8 - Multiplication par un scalaire
+9 - Transposée d'une matrice
+10 - Rang d'une matrice
+11 - Résolution d'un système linéaire
+0 - Quitter
+
+=========================================================
+          """)

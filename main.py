@@ -1,12 +1,11 @@
 from functions import *
 import msvcrt
 import os
-#affichage de menu
+#affichage de menu et input d option et clear
 menu()
-#input pour choisir l option
 option=int(input())
 os.system("cls") 
-#option 1 = echelon matrice
+#option 1 = reduction de gauss
 if option==1:
     matrice=prenant_matrice()
     lignes=len(matrice)
@@ -48,7 +47,10 @@ if option==1:
     print("entrer wzged")
     msvcrt.getch()
     os.system("cls")   
+#affichage de menu et input d option et clear
 menu() 
-#option 2 = 
+option=int(input())
+os.system("cls")
+#option 2 = Méthode de Gauss-Jordan
 if option==2:
     pass
