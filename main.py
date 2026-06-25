@@ -123,12 +123,15 @@ while True:
                     continue
             os.system("cls")
             if flag!=1:
-                adition_matrice=addition(matrice,matrice_pour_add)
+                
                 print("Matrice initiale :")
                 affichage(matrice)
                 print()
                 print("Matrice à ajouter :")    
                 affichage(matrice_pour_add)
+                print()
+                print("la methode:")
+                adition_matrice=addition(matrice,matrice_pour_add)
                 print()
                 print("Résultat de l'addition :")
                 affichage(adition_matrice)
