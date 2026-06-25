@@ -87,7 +87,10 @@ while True:
                         affichage(matrice)
                         print()
                 else:
-                    pass
+                    print()
+                    print("La matrice contient une seule ligne. Aucune élimination n'est nécessaire.")
+                    option=int(input("Choisissez une option : "))
+                    os.system("cls")
                 #affichge de resulta fianle
                 print("resulta finale:")
                 affichage(matrice)
@@ -102,10 +105,19 @@ while True:
         #option 5 = Addition de matrices
 
         if option==5:
-            print(5)
-            print("Appuyez sur n'importe quel bouton pour sortir...")
-            msvcrt.getch()
-            os.system("cls")
+            flag=0
+            try:
+                matrice=prenant_matrice()
+            except ValueError:
+                    print("Veuillez entrer un nombre valide !(un nombre entier).")
+                    print()
+                    print("Appuyez sur n'importe quel bouton pour sortir...")
+                    msvcrt.getch()
+                    os.system("cls")
+                    flag=1
+                    continue
+            if flag!=1:
+                os.system("cls")
 
 
         if option==0:
