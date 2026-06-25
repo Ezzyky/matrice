@@ -14,12 +14,12 @@ def prenant_matrice(nom="A"):
     return Matrice
 
 def affichage(matrice):
-    lignes = len(matrice)
+    lignes =len(matrice)
     for i in range(lignes):
-        if i == 0:
+        if i==0:
             debut,fin="⎡", "⎤"
-        elif i == lignes-1:
-            debut, fin = "⎣", "⎦"
+        elif i==lignes-1:
+            debut,fin="⎣", "⎦"
         else:
             debut,fin="⎢", "⎥"
         print(debut, end=" ")
