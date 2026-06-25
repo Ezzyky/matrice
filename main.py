@@ -104,7 +104,7 @@ while True:
             pass
         #option 5 = Addition de matrices
 
-        if option==5:
+        elif option==5:
             flag=0
             try:
                 matrice=prenant_matrice()
@@ -120,7 +120,7 @@ while True:
                 os.system("cls")
 
 
-        if option==0:
+        elif option==0:
             print("GOOD BYE!")
             sys.exit()
         print("Appuyez sur n'importe quel bouton pour continuer...")
