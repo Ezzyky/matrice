@@ -110,8 +110,16 @@ while True:
         #option 2 = Méthode de Gauss-Jordan
         elif option==2:
             pass
+        
+        #option 3 = Calcul du déterminant
+        elif option==3:
+             pass
+        
+        #option 4 = Inverse d'une matrice
+        elif option==4:
+             pass
+        
         #option 5 = Addition de matrices
-
         elif option==5:
             print("""
             =========================================================
@@ -157,6 +165,7 @@ while True:
             msvcrt.getch()
             os.system("cls")
 
+        #option 6 = Soustraction de matrices
         elif option==6:
             print("""
             =========================================================
@@ -203,7 +212,26 @@ while True:
             msvcrt.getch()
             os.system("cls")
 
-        #Quitter
+        #option 7 = Multiplication de matrices
+        elif option==7:
+             pass
+        #option 8 = Soustraction de matrices
+        elif option==8:
+             pass
+            
+        #option 9 = Transposée d'une matrice
+        elif option==9:
+             pass
+        
+        #option 10 = Rang d'une matrice
+        elif option==8:
+             pass
+        
+        #option 11 = Résolution d'un système linéaire
+        elif option==11:
+             pass
+        
+        #option 0 = Quitter
         elif option==0:
             print("GOOD BYE!")
             sys.exit()
