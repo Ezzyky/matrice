@@ -3,6 +3,7 @@ matrice=prenant_matrice()
 lignes=len(matrice)
 colonnes=len(matrice[0])
 print("Matrice initiale :")
+print()
 affichage(matrice)
 # Permutation des lignes L1 et la première ligne dont le premier élément est non nul
 index=0
@@ -24,6 +25,7 @@ for pivot in range(min(len(matrice), len(matrice[0]))):
     if matrice[pivot][pivot] == 0:
         continue
     elimination_gauss(matrice, pivot)
+    print("resulta finale:")
     affichage(matrice)
     print()
 
