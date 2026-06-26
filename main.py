@@ -27,7 +27,7 @@ while True:
         #option 1 = Addition 
         if option==1:
             matrice=demander_matrice()    
-            clear_avec_msg()        
+            clear_avec_msg("Appuyez sur n'importe quel bouton pour contune...")        
             historique.append("Addition")
             titre("Addition de matrices.")
             try:
@@ -67,7 +67,7 @@ while True:
         #option 2 = Soustraction
         elif option==2:
             matrice=demander_matrice()
-            clear_avec_msg()  
+            clear_avec_msg("Appuyez sur n'importe quel bouton pour contune...")  
             historique.append("Soustraction")
             titre("Soustraction de matrices")
             try:
@@ -111,7 +111,7 @@ while True:
         #option 4 = Multiplication par scalaire
         elif option==4:
             matrice=demander_matrice()
-            clear_avec_msg()  
+            clear_avec_msg("Appuyez sur n'importe quel bouton pour contune...")  
             historique.append("Multiplication par scalaire")
             titre("Multiplication par scalaire")
             try:
@@ -136,7 +136,7 @@ while True:
             
         elif option==5:
             matrice=demander_matrice()
-            clear_avec_msg()  
+            clear_avec_msg("Appuyez sur n'importe quel bouton pour contune...")  
             historique.append("Transposée")
             titre("Transposée")
             print("Matrice initiale :")
@@ -151,7 +151,7 @@ while True:
 
         #option 6 = reduction de gauss
         elif option==6:
-                matrice=demander_matrice()
+                matrice=demander_matrice("Appuyez sur n'importe quel bouton pour contune...")
                 historique.append("reduction de gauss")
                 lignes=len(matrice)
                 colonnes=len(matrice[0])
