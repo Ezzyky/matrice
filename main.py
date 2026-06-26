@@ -36,7 +36,7 @@ while True:
         if option==6:
                 lignes=len(matrice)
                 colonnes=len(matrice[0])
-                titre("       Réduction de Gauss")
+                titre("Réduction de Gauss")
                 print("Matrice initiale :")
                 print()
                 affichage(matrice)
@@ -130,11 +130,7 @@ while True:
 
         #option 2 = Soustraction de matrices
         elif option==2:
-            print("""
-            =========================================================
-                              Soustraction de matrices
-            =========================================================
-    """)
+            titre("Soustraction de matrices")
             try:
                 matrice_pour_sost=prenant_matrice(nom="B")
             except ValueError:
