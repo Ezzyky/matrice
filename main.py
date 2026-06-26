@@ -1,18 +1,15 @@
 from matrice_io import *
-from functions import *
+from gauss import *
 from menu_txtes import *
-from ALU import *
-
-import msvcrt
+from operations import *
+from utils import *
 import os
 import sys
 os.system("cls") 
-
-
 while True:
 
     home()
-    clear()
+    clear_avec_msg()
     titre("Veuillez entrer la matrice initiale.")
     flag=0
     try:
@@ -20,7 +17,7 @@ while True:
     except ValueError:
                 print()
                 print("Veuillez entrer un nombre valide !(un nombre entier).")
-                clear()
+                clear_avec_msg()
                 flag=1
                 continue
     if flag!=1:
@@ -30,13 +27,13 @@ while True:
         try:
             option = int(input("Choisissez une option : "))
         except ValueError:
-            clear("Option invalide.")
+            clear_avec_msg("Option invalide.")
             continue
         os.system("cls") 
 
 
         #option 6 = reduction de gauss
-        if option==66:
+        if option==6:
                 lignes=len(matrice)
                 colonnes=len(matrice[0])
                 titre("   Réduction de Gauss")
@@ -74,13 +71,13 @@ while True:
                 else:
                     print()
                     print("La matrice contient une seule ligne. Aucune élimination n'est nécessaire.")
-                    clear()
+                    clear_avec_msg()
                     continue
                 #affichge de resulta fianle
                 print("resulta finale:")
                 affichage(matrice)
                 print()
-                clear()
+                clear_avec_msg()
 
         #option 2 = Méthode de Gauss-Jordan
         elif option==2:
@@ -102,7 +99,7 @@ while True:
             except ValueError:
                     print("Veuillez entrer un nombre valide !(un nombre entier).")
                     print()
-                    clear()
+                    clear_avec_msg()
                     continue
             
             os.system("cls")
@@ -110,7 +107,7 @@ while True:
             colonnes_B=len(matrice_pour_add[0])
             if len(matrice)!=lignes_B or len(matrice[0])!=colonnes_B:
                 print("Addition impossible : dimensions incompatibles.")
-                clear()
+                clear_avec_msg()
                 continue
             
             print("Matrice initiale :")
@@ -129,7 +126,7 @@ while True:
             affichage(adition_matrice)
             if all(all(x==0 for x in lignes)for lignes in adition_matrice ):
                 print("-----> La matrice est une matrice nulle!")
-            clear()
+            clear_avec_msg()
 
         #option 2 = Soustraction de matrices
         elif option==2:
@@ -143,7 +140,7 @@ while True:
             except ValueError:
                     print("Veuillez entrer un nombre valide !(un nombre entier).")
                     print()
-                    clear()
+                    clear_avec_msg()
                     continue
             
             os.system("cls")
@@ -151,7 +148,7 @@ while True:
             colonnes_B=len(matrice_pour_sost[0])
             if len(matrice)!=lignes_B or len(matrice[0])!=colonnes_B:
                 print("----->Soustraction impossible : dimensions incompatibles.")
-                clear()
+                clear_avec_msg()
                 continue
             
             print("Matrice initiale :")
@@ -170,7 +167,7 @@ while True:
             affichage(soustraction_matrice)
             if all(all(x==0 for x in lignes)for lignes in soustraction_matrice ):
                 print("-----> La matrice est une matrice nulle!")
-            clear()
+            clear_avec_msg()
 
         #option 7 = Multiplication de matrices
         elif option==7:

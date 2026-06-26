@@ -48,9 +48,3 @@ def titre(b):
                         {b}
             =========================================================
     """)
-def clear(a="Appuyez sur n'importe quel bouton pour sortir..."):
-    import msvcrt
-    import os
-    print(a)
-    msvcrt.getch()
-    os.system("cls")
