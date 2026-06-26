@@ -31,9 +31,116 @@ while True:
             continue
         os.system("cls") 
 
+        
+        
+        #option 1 = Addition 
+        if option==1:
+            titre("Addition de matrices.")
+            try:
+                matrice_pour_add=prenant_matrice(nom="B")
+            except ValueError:
+                    print("Veuillez entrer un nombre valide !(un nombre entier).")
+                    print()
+                    clear_avec_msg()
+                    continue
+            
+            os.system("cls")
+            lignes_B=len(matrice_pour_add)
+            colonnes_B=len(matrice_pour_add[0])
+            if len(matrice)!=lignes_B or len(matrice[0])!=colonnes_B:
+                print("Addition impossible : dimensions incompatibles.")
+                clear_avec_msg()
+                continue
+            
+            print("Matrice initiale A:")
+            print()
+            affichage(matrice)
+            print()
+            print("Matrice à ajouter B:")    
+            print()
+            affichage(matrice_pour_add)
+            print()
+            print("Calcul de la addition par le matrice B :")
+            adition_matrice=addition(matrice,matrice_pour_add)
+            print()
+            print("Résultat de l'addition :")
+            print()
+            affichage(adition_matrice)
+            if all(all(x==0 for x in lignes)for lignes in adition_matrice ):
+                print("-----> La matrice est une matrice nulle!")
+            clear_avec_msg()
+        
+        #option 2 = Soustraction
+        elif option==2:
+            titre("Soustraction de matrices")
+            try:
+                matrice_pour_sost=prenant_matrice(nom="B")
+            except ValueError:
+                    print("Veuillez entrer un nombre valide !(un nombre entier).")
+                    print()
+                    clear_avec_msg()
+                    continue
+            
+            os.system("cls")
+            lignes_B=len(matrice_pour_sost)
+            colonnes_B=len(matrice_pour_sost[0])
+            if len(matrice)!=lignes_B or len(matrice[0])!=colonnes_B:
+                print("----->Soustraction impossible : dimensions incompatibles.")
+                clear_avec_msg()
+                continue
+            
+            print("Matrice initiale A :")
+            print()
+            affichage(matrice)
+            print()
+            print("Matrice à soustraire B :")
+            affichage(matrice_pour_sost)
+            print()
+            print("Calcul de la soustraction par le matrice B :")
+            soustraction_matrice = souetraction(matrice, matrice_pour_sost)
+            
+            print()
+            print("Résultat de la soustraction :")
+            print()
+            affichage(soustraction_matrice)
+            if all(all(x==0 for x in lignes)for lignes in soustraction_matrice ):
+                print("-----> La matrice est une matrice nulle!")
+            clear_avec_msg()
+            
+        #option 3 = Multiplication 
+        elif option==3:
+             pass
+        
+        #option 4 = Multiplication par scalaire
+        elif option==4:
+            titre("Multiplication par scalaire")
+            try:
+                scalaire=int(input("Veuillez entrer le scalaire à multiplier par la matrice: "))
+            except ValueError:
+                    print("Veuillez entrer un nombre valide !(un nombre entier).")
+                    print()
+                    clear_avec_msg()
+                    continue
+            print("Matrice initiale :")
+            print()
+            affichage(matrice)
+            print()
+            print("Calcul de la multiplication par le scalaire :")
+            matrice_multipli_scalaire=multiplication_scalaire(matrice,scalaire)
+            print("Matrice obtenue après multiplication par le scalaire :")
+            print()
+            affichage(matrice_multipli_scalaire)
+            clear_avec_msg()
+             
+        
+        
+        #option 5 = Transposée
+        elif option==5:
+             pass
+
 
         #option 6 = reduction de gauss
-        if option==6:
+        elif option==6:
                 lignes=len(matrice)
                 colonnes=len(matrice[0])
                 titre("Réduction de Gauss")
@@ -79,113 +186,12 @@ while True:
                 print()
                 clear_avec_msg()
 
-        #option 2 = Méthode de Gauss-Jordan
-        elif option==2:
-            pass
-        
-        #option 3 = Calcul du déterminant
-        elif option==3:
-             pass
-        
-        #option 4 = Inverse d'une matrice
-        elif option==4:
-             pass
-        
-        #option 1 = Addition 
-        elif option==1:
-            titre("Addition de matrices.")
-            try:
-                matrice_pour_add=prenant_matrice(nom="B")
-            except ValueError:
-                    print("Veuillez entrer un nombre valide !(un nombre entier).")
-                    print()
-                    clear_avec_msg()
-                    continue
-            
-            os.system("cls")
-            lignes_B=len(matrice_pour_add)
-            colonnes_B=len(matrice_pour_add[0])
-            if len(matrice)!=lignes_B or len(matrice[0])!=colonnes_B:
-                print("Addition impossible : dimensions incompatibles.")
-                clear_avec_msg()
-                continue
-            
-            print("Matrice initiale :")
-            print()
-            affichage(matrice)
-            print()
-            print("Matrice à ajouter :")    
-            print()
-            affichage(matrice_pour_add)
-            print()
-            print("la methode:")
-            adition_matrice=addition(matrice,matrice_pour_add)
-            print()
-            print("Résultat de l'addition :")
-            print()
-            affichage(adition_matrice)
-            if all(all(x==0 for x in lignes)for lignes in adition_matrice ):
-                print("-----> La matrice est une matrice nulle!")
-            clear_avec_msg()
 
-        #option 2 = Soustraction de matrices
-        elif option==2:
-            titre("Soustraction de matrices")
-            try:
-                matrice_pour_sost=prenant_matrice(nom="B")
-            except ValueError:
-                    print("Veuillez entrer un nombre valide !(un nombre entier).")
-                    print()
-                    clear_avec_msg()
-                    continue
-            
-            os.system("cls")
-            lignes_B=len(matrice_pour_sost)
-            colonnes_B=len(matrice_pour_sost[0])
-            if len(matrice)!=lignes_B or len(matrice[0])!=colonnes_B:
-                print("----->Soustraction impossible : dimensions incompatibles.")
-                clear_avec_msg()
-                continue
-            
-            print("Matrice initiale :")
-            print()
-            affichage(matrice)
-            print()
-            print("Matrice à soustraire :")
-            affichage(matrice_pour_sost)
-            print()
-            print("La méthode :")
-            soustraction_matrice = souetraction(matrice, matrice_pour_sost)
-            
-            print()
-            print("Résultat de la soustraction :")
-            print()
-            affichage(soustraction_matrice)
-            if all(all(x==0 for x in lignes)for lignes in soustraction_matrice ):
-                print("-----> La matrice est une matrice nulle!")
-            clear_avec_msg()
 
-        #option 7 = Multiplication de matrices
-        elif option==7:
-             pass
-        #option 8 = Soustraction de matrices
-        elif option==8:
-             pass
-            
-        #option 9 = Transposée d'une matrice
-        elif option==9:
-             pass
-        
-        #option 10 = Rang d'une matrice
-        elif option==8:
-             pass
-        
-        #option 11 = Résolution d'un système linéaire
-        elif option==11:
-             pass
         
         #option 0 = Quitter
         elif option==0:
-            print("GOOD BYE!")
+            titre("""          Merci d'avoir utilisé notre application !
+                    À bientôt !  Au revoir !""")
             sys.exit()
         os.system("cls")

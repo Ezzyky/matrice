@@ -1,7 +1,7 @@
-def Multiplication_scalaire(matrice,scalaire):
+def multiplication_scalaire(matrice,scalaire):
+    matrice_m=[[None for i in range(len(matrice[0]))]for i in range(len(matrice))]
     for i in range(len(matrice)):
         for j in range(len(matrice[0])):
-            matrice_m=[[None for i in range(len(matrice[0]))]for i in range(len(matrice))]
             matrice_m[i][j]=scalaire*matrice[i][j]
             print(f"{matrice[i][j]} X {scalaire}  ",end="")
             print()
