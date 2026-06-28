@@ -5,12 +5,12 @@ from operations import *
 from utils import *
 import os
 import sys
-os.system("cls") 
+
 #la premire page 
 home()
 clear_avec_msg()
 
-#un lise pour l'option 25 
+#une liste pour l'option 25 
 historique=[]
 while True:
     
@@ -264,4 +264,7 @@ while True:
             titre("""          Merci d'avoir utilisé notre application !
                     À bientôt !  Au revoir !""")
             sys.exit()
-        os.system("cls")
+
+        else:
+             titre("pas de option!")
+             clear_avec_msg()
