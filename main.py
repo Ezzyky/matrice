@@ -95,7 +95,6 @@ while True:
             print()
             print("Calcul de la soustraction par le matrice B :")
             soustraction_matrice = souetraction(matrice, matrice_pour_sost)
-            
             print()
             print("Résultat de la soustraction :")
             print()
@@ -182,6 +181,7 @@ while True:
             affichage(matrice_Transpose)
             print()
             clear_avec_msg()
+            
 
         #option 6 = reduction de gauss
         elif option==6:

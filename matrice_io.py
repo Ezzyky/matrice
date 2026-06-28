@@ -1,6 +1,6 @@
 from menu_txtes import *
 from utils import *
-
+import sys
 #ajout un exception pour les errors
 class MatrixSizeError(Exception):
     pass
@@ -73,3 +73,17 @@ def trace(matrice):
     for i in range(len(matrice)):
         t+=matrice[i][i]
     return t
+def options():
+    try:
+            option = int(input("Choisissez une option : "))
+    except ValueError:
+        clear_avec_msg("Option invalide.")
+        
+    if option==0:
+         titre("""          Merci d'avoir utilisé notre application !
+                    À bientôt !  Au revoir !""")
+         sys.exit()
+    if option==1:
+        pass
+    if option==2:
+        pass
